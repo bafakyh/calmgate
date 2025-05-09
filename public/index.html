@@ -101,6 +101,27 @@
             document.getElementById('home-page').style.display = 'block';
  
             document.getElementById('user-name').textContent = name;
+            generateSupportContent(profession);
+        }
+        
+
+        function generateSupportContent(profession) {
+            const professionSupportBox = document.getElementById('profession-support-box');
+            const generatedProfession = document.getElementById('generated-profession');
+            const professionDetails = document.getElementById('profession-details');
+
+            generatedProfession.textContent = profession; 
+            const fullPrompt = `Generate exactly two support ideas for the profession: ${profession}. and only output the two support ideas no need of ur conversation no need description for it either... just as if title`;
+ 
+            puter.ai.chat(fullPrompt)
+                .then(response => {
+ 
+                    professionDetails.innerHTML = response;
+                })
+                .catch(error => {
+                    console.error("Error from puter.ai:", error);
+                    professionDetails.innerHTML = "<li>We are searching for available organizations for assistance right now.</li>";
+                });
         }
 
         // Send message function for the chat
