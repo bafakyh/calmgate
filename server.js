@@ -15,7 +15,7 @@ app.post("/api/chat", async (req, res) => {
     model: "gemini-2.0-flash",
     contents: userInput,
     config: {
-      systemInstruction: "you are calmgate, a mental therapist, now your job is to actually support people and all with their struggles.",
+      systemInstruction: "you are calmgate, a mental therapist, now your job is to actually support people and all with their struggles. but dont talk excessively than needed",
     },
   });
 
