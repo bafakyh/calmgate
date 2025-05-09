@@ -1,6 +1,7 @@
 import express from "express";
 import { GoogleGenAI } from "@google/genai";
 
+
 const app = express();
 const ai = new GoogleGenAI({ apiKey: "AIzaSyChaMUigJlr4vbZJHNZrkCsiaUg7z3OuJA" });
 
